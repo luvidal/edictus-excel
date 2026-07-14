@@ -1,4 +1,4 @@
-# @jogi/excel — Excel Export Satellite
+# @edictus/excel — Excel Export Satellite
 
 Pure data-in / Buffer-out library that renders an `.xlsx` workbook from a pre-shaped `ExcelInput`. Extracted from [jogi](../jogi) to isolate `exceljs` and all Excel-format quirks from the host's bundle and review surface.
 
@@ -39,7 +39,7 @@ src/
 
 1. **File naming** → lowercase, no hyphens/underscores
 2. **No `@/` imports** → relative within `src/`
-3. **No host code, no `@jogi/*` deps, no React** — pure library
+3. **No host code, no `@edictus/*` deps, no React** — pure library
 4. **API stability** — `buildExcel` + `ExcelInput` + `ExcelColumn` are the exported surface; breaking changes update the host in the same handoff
 5. **Sheet order is contract** — `Resumen, Perfil, Deudas, Propiedades, Vehículos, Inversiones` (accents preserved)
 6. **CLAUDE.md maintenance** — update on contract/behavior changes
@@ -56,11 +56,11 @@ npm run test:watch   # Watch mode
 ## Consumer Integration
 
 ```json
-"@jogi/excel": "github:luvidal/jogi-excel#<sha>"
+"@edictus/excel": "github:luvidal/edictus-excel#<sha>"
 ```
 
 Host calls:
 ```ts
-import { buildExcel } from '@jogi/excel'
+import { buildExcel } from '@edictus/excel'
 const buffer = await buildExcel(toExcelInput(snapshot))
 ```
